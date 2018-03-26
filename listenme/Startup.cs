@@ -22,7 +22,7 @@ namespace listenme
         {
 
             services.AddDbContext<BDContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("LISTENME")));
 
             services.AddMvc();
 

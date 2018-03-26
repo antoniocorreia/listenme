@@ -1,0 +1,4 @@
+#Comandos manuais para atualização do BD via migrations
+
+dotnet ef migrations add NomeDoPacote
+dotnet ef database update

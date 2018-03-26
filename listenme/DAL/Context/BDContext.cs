@@ -22,6 +22,7 @@ namespace listenme.DAL.Context
 
             protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Sugestao>().HasKey(c => c.Id);
             modelBuilder.Entity<Sugestao>().ToTable("Sugestao");
         }
     }
