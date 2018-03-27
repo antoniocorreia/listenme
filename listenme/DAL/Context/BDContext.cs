@@ -10,7 +10,7 @@ using listenme.Models;
 
 namespace listenme.DAL.Context
 {
-    class BDContext : DbContext
+    public class BDContext : DbContext
     {
 
         public DbSet<Sugestao> SugestaoDb { get; set; }
