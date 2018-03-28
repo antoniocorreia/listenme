@@ -1,11 +1,10 @@
-<h1>Sugestoes</h1>
+<h1>Sugestões</h1>
 
 <p *ngIf="!sugestoes"><em>Loading...</em></p>
 
-<table class='table' *ngIf="sugestoes">
+<table class='table table-striped' *ngIf="sugestoes">
   <thead>
     <tr>
-      <th>id</th>
       <th>titulo</th>
       <th>descricao</th>
       <th>contlike</th>
@@ -14,7 +13,6 @@
   </thead>
   <tbody>
     <tr *ngFor="let sugestao of sugestoes">
-      <td>{{ sugestao.id }}</td>
       <td>{{ sugestao.titulo }}</td>
       <td>{{ sugestao.descricao }}</td>
       <td>{{ sugestao.contLike }}</td>

@@ -24,9 +24,34 @@ namespace listenme.Controllers
     [HttpGet("[action]")]
     public IList<Sugestao> GetSugestoes()
     {
-      var Sugestoes = _context.SugestaoDb.ToList(); //.FromSql("SELECT * FROM AVS.fn_LoteNFESefaz_API()").Where(c => c.statusNFE == "NENV").ToList();        
+      var Sugestoes = _context.SugestaoDb.ToList();
       return Sugestoes;
 
+    }
+
+    [HttpPost("[action]")]
+    public IActionResult Create([FromBody] Sugestao item)
+    {
+      if (item == null)
+      {
+        return BadRequest();
+      }
+
+      _context.SugestaoDb.Add(item);
+      _context.SaveChanges();
+
+      return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
+    }
+
+    [HttpGet("{id}", Name = "GetTodo")]
+    public IActionResult GetById(long id)
+    {
+      var item = _context.SugestaoDb.FirstOrDefault(t => t.Id == id);
+      if (item == null)
+      {
+        return NotFound();
+      }
+      return new ObjectResult(item);
     }
 
   }

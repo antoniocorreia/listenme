@@ -1,32 +1,33 @@
 <div class='main-nav'>
     <div class='navbar navbar-inverse'>
         <div class='navbar-header'>
-            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
+            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded'
+                (click)='toggle()'>
                 <span class='sr-only'>Toggle navigation</span>
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <a class='navbar-brand' [routerLink]='["/"]'>listenme</a>
+            <img class='navbar-logo' [routerLink]='["/"]' src="../../assets/listenme.png">
         </div>
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
             <ul class='nav navbar-nav'>
                 <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
                     <a [routerLink]='["/"]' (click)='collapse()'>
-                        <span class='glyphicon glyphicon-home'></span> Home
+                        <span class='glyphicon glyphicon-comment'></span> Sugestões
                     </a>
                 </li>
                 <li [routerLinkActive]='["link-active"]'>
                     <a [routerLink]='["/counter"]' (click)='collapse()'>
-                        <span class='glyphicon glyphicon-education'></span> Counter
+                        <span class='glyphicon glyphicon-send'></span> Enviar Sugestão
                     </a>
                 </li>
-                <li [routerLinkActive]='["link-active"]'>
+                <!-- <li [routerLinkActive]='["link-active"]'>
                     <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
                         <span class='glyphicon glyphicon-th-list'></span> Fetch data
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

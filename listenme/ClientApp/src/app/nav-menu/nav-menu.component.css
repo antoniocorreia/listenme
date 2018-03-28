@@ -23,12 +23,17 @@ li.link-active a:focus {
     /* On small screens, convert the nav menu to a vertical sidebar */
     .main-nav {
         height: 100%;
-        width: calc(25% - 20px);
+        width: calc(15% - 20px);
     }
     .navbar {
         border-radius: 0px;
         border-width: 0px;
         height: 100%;
+        background-color: black;
+    }
+    .navbar-logo{
+        height: 100%;
+        width: 100%; 
     }
     .navbar-header {
         float: none;
