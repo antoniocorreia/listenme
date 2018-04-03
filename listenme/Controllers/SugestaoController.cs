@@ -54,5 +54,31 @@ namespace listenme.Controllers
       return new ObjectResult(item);
     }
 
+    [HttpPost("[action]")]
+    public IActionResult Like(long Id)
+    {
+      var result = _context.SugestaoDb.FirstOrDefault(b => b.Id == Id);
+      if (result != null)
+      {
+        result.contLike += 1;
+        _context.SaveChanges();
+      }
+
+      return new ObjectResult(result);
+    }
+
+    [HttpPost("[action]")]
+    public IActionResult UnLike(long Id)
+    {
+      var result = _context.SugestaoDb.FirstOrDefault(b => b.Id == Id);
+      if (result != null)
+      {
+        result.contUnLike += 1;
+        _context.SaveChanges();
+      }
+
+      return new ObjectResult(result);
+    }
+
   }
 }

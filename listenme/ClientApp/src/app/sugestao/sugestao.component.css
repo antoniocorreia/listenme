@@ -1,0 +1,17 @@
+.titulosugestao{
+  font-size: 24px
+}
+.descricaoSugestao{
+  font-size: 12px
+}
+
+.container {
+  width: 50px;
+  height: auto;
+}
+
+
+.container img {
+  width: 100%;
+  height: auto;
+}

@@ -1,22 +1,45 @@
-<h1>Sugestões</h1>
+<br>
+<br>
 
-<p *ngIf="!sugestoes"><em>Loading...</em></p>
+<h2>Sugestões</h2>
 
-<table class='table table-striped' *ngIf="sugestoes">
-  <thead>
-    <tr>
-      <th>titulo</th>
-      <th>descricao</th>
-      <th>contlike</th>
-      <th>contunlinke</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let sugestao of sugestoes">
-      <td>{{ sugestao.titulo }}</td>
-      <td>{{ sugestao.descricao }}</td>
-      <td>{{ sugestao.contLike }}</td>
-      <td>{{ sugestao.contUnLike }}</td>
-    </tr>
-  </tbody>
-</table>
+<p *ngIf="!sugestoes">
+  <em>Loading...</em>
+</p>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-8">
+    <table class='table table-striped' *ngIf="sugestoes">
+      <thead>
+        <tr>
+          <th>Descricao</th>
+          <!-- <th>descricao</th> -->
+          <th>Like</th>
+          <th>Unlike</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sugestao of sugestoes">
+          <td>
+            <p class="titulosugestao">{{ sugestao.titulo }}</p>
+            <p class="descricaoSugestao">{{ sugestao.descricao }}</p>
+          </td>
+          <td>{{ sugestao.contLike }}</td>
+          <td>{{ sugestao.contUnLike }}</td>
+          <td class="container">
+            <button (click)="like(sugestao.id)">
+              <img class="btnLikeFormat" src="../../assets/like.png" />
+            </button>
+            <button (click)="unLike(sugestao.id)">
+              <img class="btnLikeFormat" src="../../assets/unlike.png" />
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

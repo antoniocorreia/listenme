@@ -1,0 +1,16 @@
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-8">
+    <div class="form-group">
+      <label>Título</label>
+      <input class="form-control" [(ngModel)]="sugestao.titulo" required type="text">
+    </div>
+    <div class="form-group">
+      <label>Descrição</label>
+      <input class="form-control" [(ngModel)]="sugestao.descricao" required type="text">
+    </div>
+    <button class="btn btn-primary" (click)="setValue()">Enviar</button>
+  </div>
+</div>
