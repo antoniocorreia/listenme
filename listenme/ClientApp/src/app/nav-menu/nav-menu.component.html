@@ -8,7 +8,7 @@
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <img class='navbar-logo' [routerLink]='["/"]' src="../../assets/listenme.png">
+            <img class='navbar-logo' [routerLink]='["/"]' src="../../assets/listenme.png" [routerLink]='["/"]' (click)='collapse()'>
         </div>
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
